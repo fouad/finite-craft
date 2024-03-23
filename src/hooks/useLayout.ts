@@ -19,19 +19,36 @@ function layoutNodes(nodes: Node[], edges: Edge[]): Node[] {
   if (nodes.length === 0) {
     return [];
   }
+  
+  let newNodes: Node[] = []
+
+  nodes.forEach((node, index) => {
+    const row = Math.floor(index / 2)
+    const col = index % 2
+    newNodes.push({
+      ...node,
+      position: {
+        x: col * 200,
+        y: row * 60,
+      },
+    })
+  })
+
+  return newNodes
+
   // convert nodes and edges into a hierarchical object for using it with the layout function
-  const hierarchy = stratify<Node>()
-    .id((d) => d.id)
-    // get the id of each node by searching through the edges
-    // this only works if every node has one connection
-    .parentId((d: Node) => edges.find((e: Edge) => e.target === d.id)?.source)(nodes);
+  // const hierarchy = stratify<Node>()
+  //   .id((d) => d.id)
+  //   // get the id of each node by searching through the edges
+  //   // this only works if every node has one connection
+  //   .parentId((d: Node) => edges.find((e: Edge) => e.target === d.id)?.source)(nodes);
 
-  // run the layout algorithm with the hierarchy data structure
-  const root = layout(hierarchy);
+  // // run the layout algorithm with the hierarchy data structure
+  // const root = layout(hierarchy);
 
-  // convert the hierarchy back to react flow nodes (the original node is stored as d.data)
-  // we only extract the position from the d3 function
-  return root.descendants().map((d) => ({ ...d.data, position: { x: d.x, y: d.y } }));
+  // // convert the hierarchy back to react flow nodes (the original node is stored as d.data)
+  // // we only extract the position from the d3 function
+  // return root.descendants().map((d) => ({ ...d.data, position: { x: d.x, y: d.y } }));
 }
 
 // this is the store selector that is used for triggering the layout, this returns the number of nodes once they change

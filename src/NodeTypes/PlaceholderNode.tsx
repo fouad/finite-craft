@@ -1,16 +1,16 @@
-import { memo } from 'react';
-import { Handle, Position, NodeProps } from 'reactflow';
-import cx from 'classnames';
+import { memo } from 'react'
+import { Handle, Position, NodeProps } from 'reactflow'
+import cx from 'classnames'
 
-import styles from './NodeTypes.module.css';
-import usePlaceholderClick from '../hooks/usePlaceholderClick';
+import styles from './NodeTypes.module.css'
+import usePlaceholderClick from '../hooks/usePlaceholderClick'
 
 const PlaceholderNode = ({ id, data }: NodeProps) => {
   // see the hook implementation for details of the click handler
   // calling onClick turns this node and the connecting edge into a workflow node
-  const onClick = usePlaceholderClick(id);
+  const onClick = usePlaceholderClick(id)
 
-  const nodeClasses = cx(styles.node, styles.placeholder);
+  const nodeClasses = cx(styles.node, styles.placeholder)
 
   return (
     <div onClick={onClick} className={nodeClasses} title="click to add a node">
@@ -27,8 +27,15 @@ const PlaceholderNode = ({ id, data }: NodeProps) => {
         position={Position.Bottom}
         isConnectable={false}
       />
+      <Handle
+        id="right"
+        className={styles.handle}
+        type="source"
+        position={Position.Right}
+        isConnectable={false}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default memo(PlaceholderNode);
+export default memo(PlaceholderNode)

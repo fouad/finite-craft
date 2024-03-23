@@ -24,9 +24,17 @@ const WorkflowNode = ({ id, data }: NodeProps) => {
         isConnectable={false}
       />
       <Handle
+        id="bottom"
         className={styles.handle}
         type="source"
         position={Position.Bottom}
+        isConnectable={false}
+      />
+      <Handle
+        id="right"
+        className={styles.handle}
+        type="source"
+        position={Position.Right}
         isConnectable={false}
       />
     </div>

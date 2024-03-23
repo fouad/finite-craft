@@ -35,7 +35,38 @@ const defaultNodes: Node[] = [
     type: 'workflow',
   },
   {
+    id: '1-a',
+    data: { label: ' ' },
+    position: { x: 200, y: 0 },
+    type: 'merge',
+  },
+  {
     id: '2',
+    data: { label: '🌮 Taco' },
+    position: { x: 0, y: 0 },
+    type: 'placeholder',
+  },
+  {
+    id: '2-a',
+    data: { label: ' ' },
+    position: { x: 200, y: 0 },
+    type: 'merge',
+  },
+
+  {
+    id: '3',
+    data: { label: '🌮 Taco' },
+    position: { x: 0, y: 0 },
+    type: 'placeholder',
+  },
+  {
+    id: '3-a',
+    data: { label: ' ' },
+    position: { x: 200, y: 0 },
+    type: 'merge',
+  },
+  {
+    id: '4',
     data: { label: '+' },
     position: { x: 0, y: 150 },
     type: 'placeholder',
@@ -45,9 +76,39 @@ const defaultNodes: Node[] = [
 // initial setup: connect the workflow node to the placeholder node with a placeholder edge
 const defaultEdges: Edge[] = [
   {
+    id: '1=>1-a',
+    source: '1',
+    sourceHandle: 'right',
+    target: '1-a',
+  },
+  {
     id: '1=>2',
     source: '1',
     target: '2',
+    type: 'placeholder',
+  },
+  {
+    id: '2=>2-a',
+    source: '2',
+    sourceHandle: 'right',
+    target: '2-a',
+  },
+  {
+    id: '2=>3',
+    source: '2',
+    target: '3',
+    type: 'placeholder',
+  },
+  {
+    id: '3=>3-a',
+    source: '3',
+    sourceHandle: 'right',
+    target: '3-a',
+  },
+  {
+    id: '3=>4',
+    source: '3',
+    target: '4',
     type: 'placeholder',
   },
 ];
@@ -56,7 +117,7 @@ const fitViewOptions = {
   padding: 0.95,
 };
 
-function ReactFlowPro() {
+function ReactFlowComponent() {
   // this hook call ensures that the layout is re-calculated every time the graph changes
   useLayout();
 
@@ -87,7 +148,7 @@ function ReactFlowPro() {
 function ReactFlowWrapper() {
   return (
     <ReactFlowProvider>
-      <ReactFlowPro />
+      <ReactFlowComponent />
     </ReactFlowProvider>
   );
 }
