@@ -1,22 +1,22 @@
-import { NodeProps, useReactFlow } from 'reactflow';
+import { NodeProps, useReactFlow } from 'reactflow'
 
-import { uuid, randomLabel } from '../utils';
+import { uuid, randomLabel } from '../utils'
 
 // this hook implements the logic for clicking a placeholder node
 // on placeholder node click: turn the placeholder and connecting edge into a workflow node
 export function useMergeWordClick(id: NodeProps['id']) {
-  const { getNode, setNodes, setEdges } = useReactFlow();
+  const { getNodes, getNode, setNodes, setEdges } = useReactFlow()
 
   const onClick = () => {
     // we need the parent node object for getting its position
-    const parentNode = getNode(id);
+    const parentNode = getNode(id)
 
     if (!parentNode) {
-      return;
+      return
     }
 
     // create a unique id for the placeholder node that will be added as a child of the clicked node
-    const childPlaceholderId = uuid();
+    const childPlaceholderId = uuid()
 
     // create a placeholder node that will be added as a child of the clicked node
     const childPlaceholderNode = {
@@ -26,7 +26,7 @@ export function useMergeWordClick(id: NodeProps['id']) {
       position: { x: parentNode.position.x, y: parentNode.position.y },
       type: 'placeholder',
       data: { label: '+' },
-    };
+    }
 
     // we need a connection from the clicked node to the new placeholder
     const childPlaceholderEdge = {
@@ -34,9 +34,50 @@ export function useMergeWordClick(id: NodeProps['id']) {
       source: parentNode.id,
       target: childPlaceholderId,
       type: 'placeholder',
-    };
+    }
 
-    alert('Ahhhh!!!!!!!!!!!')
+    const result = prompt('What word you like to use?')
+    let index = -1
+
+    setNodes((nodes) =>
+      nodes.map((node, idx) => {
+        // here we are changing the type of the clicked node from placeholder to workflow
+        if (node.id === id) {
+          index = idx
+          return {
+            ...node,
+            type: 'merge',
+            data: { label: result },
+          }
+        }
+        return node
+      })
+    )
+
+    setTimeout(async () => {
+      const nodes = getNodes()
+      const merged = await fetch('/api/merge?' + new URLSearchParams({
+        first: nodes[index - 1].data.label,
+        second: result || '',
+      }).toString(), {
+        method: 'GET',
+      }).then(r => r.json())
+      console.log(merged)
+
+      setNodes((nodes) =>
+        nodes.map((node, idx) => {
+          // here we are changing the type of the clicked node from placeholder to workflow
+          if (idx === (index + 1)) {
+            return {
+              ...node,
+              type: 'workflow',
+              data: { label: merged.result },
+            }
+          }
+          return node
+        })
+      )
+    }, 0)
 
     /*
     setNodes((nodes) =>
@@ -72,9 +113,9 @@ export function useMergeWordClick(id: NodeProps['id']) {
         .concat([childPlaceholderEdge])
     );
     */
-  };
+  }
 
-  return onClick;
+  return onClick
 }
 
-export default useMergeWordClick;
+export default useMergeWordClick
