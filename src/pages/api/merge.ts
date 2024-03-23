@@ -28,7 +28,14 @@ export default async function handler(
     messages: [
       {
         role: "system",
-        content: `Return a JSON {result: single_word} that is a single word which is a conceptual combination of the two words: ${first}, ${second}`,
+        content: `Return a JSON {result: word} that is a SINGLE word (DO NOT simply concatenate the two words, NO HYPHENS allowed, stick to normal vocabulary) which is a CONCEPTUAL combination of the two words provided.
+        Examples:
+        tree + fire = ash
+        cloud + water = rain
+        soil + volcano = lava
+        
+        Now:
+        ${first} + ${second} = ?`,
       },
     ],
   });
