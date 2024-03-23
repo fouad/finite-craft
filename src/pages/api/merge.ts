@@ -33,6 +33,10 @@ export default async function handler(
         tree + fire = ash
         cloud + water = rain
         soil + volcano = lava
+        umbrella + dust = dustbin
+        earth + dustbin = landfill
+        wind + plant = dandelion
+        plant + water = swamp
         
         Now:
         ${first} + ${second} = ?`,
