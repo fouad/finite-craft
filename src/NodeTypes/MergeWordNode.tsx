@@ -17,8 +17,6 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 
-const potentialWords = ['Tree', 'Train', 'Bus', 'Taco']
-
 const MergeWordNode = ({ id, data }: NodeProps) => {
   // see the hook implementation for details of the click handler
   // calling onClick turns this node and the connecting edge into a workflow node
@@ -29,6 +27,8 @@ const MergeWordNode = ({ id, data }: NodeProps) => {
   )
   const [state, setState] = useState({ open: false })
   const onClick = useMergeWordClick(id, state, setState)
+  // @ts-ignore
+  const potentialWords = window._ingredients || ['Tree', 'Train', 'Bus', 'Taco']
 
   return (
     <>
@@ -57,7 +57,7 @@ const MergeWordNode = ({ id, data }: NodeProps) => {
             </DrawerTitle>
           </DrawerHeader>
           <div className="max-w-sm mx-auto w-full">
-            {potentialWords.map((word) => {
+            {potentialWords.map((word:string) => {
               return (
                 <div
                   className="bg-gray-100 hover:bg-gray-200 rounded-lg py-3 px-6 mb-3 cursor-pointer"

@@ -16,22 +16,23 @@ import ReactFlow, {
   Node,
   ProOptions,
   ReactFlowProvider,
-} from 'reactflow';
+} from 'reactflow'
 
-import useLayout from './hooks/useLayout';
-import nodeTypes from './NodeTypes';
-import edgeTypes from './EdgeTypes';
+import useLayout from './hooks/useLayout'
+import nodeTypes from './NodeTypes'
+import edgeTypes from './EdgeTypes'
 
-import 'reactflow/dist/style.css';
+import 'reactflow/dist/style.css'
+import { useEffect, useState } from 'react'
 
-const proOptions: ProOptions = { account: 'paid-pro', hideAttribution: true };
+const proOptions: ProOptions = { account: 'paid-pro', hideAttribution: true }
 
 // initial setup: one workflow node and a placeholder node
 // placeholder nodes can be turned into a workflow node by click
-const defaultNodes: Node[] = [
+const initNodes = (start: string, end: string): Node[] => [
   {
     id: '1',
-    data: { label: '🌮 Taco' },
+    data: { label: start },
     position: { x: 0, y: 0 },
     type: 'workflow',
   },
@@ -68,11 +69,11 @@ const defaultNodes: Node[] = [
   },
   {
     id: '4',
-    data: { label: '🚊 Train' },
+    data: { label: end },
     position: { x: 0, y: 150 },
     type: 'goal',
   },
-];
+]
 
 // initial setup: connect the workflow node to the placeholder node with a placeholder edge
 const defaultEdges: Edge[] = [
@@ -84,7 +85,7 @@ const defaultEdges: Edge[] = [
     type: 'straight',
     markerStart: {
       type: MarkerType.Arrow,
-    }
+    },
   },
   {
     id: '1=>2',
@@ -104,7 +105,7 @@ const defaultEdges: Edge[] = [
 
     markerStart: {
       type: MarkerType.Arrow,
-    }
+    },
   },
   {
     id: '2=>3',
@@ -124,7 +125,7 @@ const defaultEdges: Edge[] = [
 
     markerStart: {
       type: MarkerType.Arrow,
-    }
+    },
   },
   {
     id: '3=>4',
@@ -135,20 +136,20 @@ const defaultEdges: Edge[] = [
       type: MarkerType.Arrow,
     },
   },
-];
+]
 
 const fitViewOptions = {
   padding: 0.95,
-};
+}
 
-function ReactFlowComponent() {
+function ReactFlowComponent({ nodes }: { nodes: Node[] }) {
   // this hook call ensures that the layout is re-calculated every time the graph changes
-  useLayout();
+  useLayout()
 
   return (
     <>
       <ReactFlow
-        defaultNodes={defaultNodes}
+        defaultNodes={nodes}
         defaultEdges={defaultEdges}
         proOptions={proOptions}
         fitView
@@ -166,15 +167,32 @@ function ReactFlowComponent() {
         <Background />
       </ReactFlow>
     </>
-  );
+  )
 }
 
 function ReactFlowWrapper() {
+  const [state, setState] = useState({ nodes: [] as Node[] })
+
+  useEffect(() => {
+    fetch('/api/wotd?day=2024-03-24')
+      .then((r) => r.json())
+      .then((wotd) => {
+        const { steps, ingredients, target } = wotd
+        // @ts-ignore
+        window._ingredients = ingredients
+        setState({ nodes: initNodes(steps[0][0] as string, target as string) })
+      })
+  })
+
+  if (!state.nodes || state.nodes.length === 0) {
+    return null
+  }
+
   return (
     <ReactFlowProvider>
-      <ReactFlowComponent />
+      <ReactFlowComponent nodes={state.nodes} />
     </ReactFlowProvider>
-  );
+  )
 }
 
-export default ReactFlowWrapper;
+export default ReactFlowWrapper
