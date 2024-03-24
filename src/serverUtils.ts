@@ -15,7 +15,7 @@ export const mergeWords = async (
 
   const chatResponse = await client.chat({
     model: "mistral-large-latest",
-    temperature: 0.1,
+    temperature: 0,
     responseFormat: { type: "json_object" as any },
     messages: [
       {
