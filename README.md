@@ -1,8 +1,10 @@
 # Finite Craft
+
 _Wikiracer + Wordle for LLMs — combine words together to reach the word of the day_
 
-## Play it here! 
-http://finitecraft.com
+## Play it here!
+
+[FiniteCraft.com](https://finitecraft.com)
 
 ## Inspiration
 We were inspired by 3 games of the modern age: Wikiracer, Wordle, and Minecraft. The result is Finite Craft, a game where you are given an item to craft towards, and a starting word, and you can combine the items given to get there in 3 steps or more.
