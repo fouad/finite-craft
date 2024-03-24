@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getOrGenerateRecipes, searchEmoji } from "../serverUtils";
+import { getOrGenerateRecipes, searchEmoji } from "../../serverUtils";
 
 type Recipe = {
   recipe: string[];

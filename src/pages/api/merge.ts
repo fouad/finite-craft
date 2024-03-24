@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { mergeWords } from "../serverUtils";
+import { mergeWords } from "../../serverUtils";
 
 type Data = {
   result: string;
