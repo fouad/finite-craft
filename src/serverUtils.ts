@@ -15,19 +15,20 @@ export const mergeWords = async (
 
   const chatResponse = await client.chat({
     model: "mistral-large-latest",
+    temperature: 0.1,
     responseFormat: { type: "json_object" as any },
     messages: [
       {
         role: "system",
-        content: `Return a JSON {result: word} that is a SINGLE word with emoji (DO NOT simply concatenate the two words, NO HYPHENS allowed, stick to normal vocabulary) which is a CONCEPTUAL combination of the two words provided.
-        Examples (follow these exactly if possible):
+        content: `Return a JSON {result: word} that is a SINGLE word (DO NOT simply concatenate the two words, NO HYPHENS allowed, stick to normal vocabulary) which is a combination of the two words provided.
+        Examples (follow these EXACTLY when the summands are the same):
         tree + fire = ash
         cloud + water = rain
         soil + volcano = lava
         plant + water = swamp
         water + fire = steam,
         steam + fire = engine,
-        engine + robot = transformer,
+        engine + robot = transformer
         
         Now:
         ${first} + ${second} = ?`,
@@ -155,14 +156,14 @@ export const getFullRecipesFromData = async (): Promise<{
   return getFullRecipesWithMinimumSteps(targets, recipeObj, index);
 };
 
-const _recipes = require('../recipes.json')
+const _recipes = require("../recipes.json");
 
 export const getOrGenerateRecipes = async (): Promise<{
   [key: string]: { steps: string[][]; ingredients: string[] };
 }> => {
   let recipes;
   try {
-    recipes = _recipes
+    recipes = _recipes;
   } catch (error) {
     console.log("Generating recipes data");
     recipes = await getFullRecipesFromData();
