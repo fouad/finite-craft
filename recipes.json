@@ -1,0 +1,207 @@
+{
+  "🌞 Sun": [
+    ["🌍 Earth", "💨 Wind"],
+    ["🧹 Dust", "🌍 Earth"],
+    ["🔥 Fire", "🪐 Planet"]
+  ],
+  "🪨 Rock": [
+    ["🌍 Earth", "🔥 Fire"],
+    ["🌋 Lava", "💧 Water"],
+    ["🪨 Stone", "💧 Water"]
+  ],
+  "❄️ Ice": [
+    ["🔥 Fire", "💨 Wind"],
+    ["🚬 Smoke", "💧 Water"],
+    ["🌫️ Fog", "💧 Water"]
+  ],
+  "🥃 Glass": [
+    ["💧 Water", "💨 Wind"],
+    ["🌊 Wave", "🌍 Earth"],
+    ["🏖️ Sand", "🔥 Fire"]
+  ],
+  "🏞️ Marsh": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌱 Plant", "💧 Water"],
+    ["💧 Water", "🏞️ Swamp"]
+  ],
+  "🏞️ River": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌍 Earth", "🌱 Plant"],
+    ["🌳 Tree", "💧 Water"]
+  ],
+  "🚜 Tractor": [
+    ["🔥 Fire", "💧 Water"],
+    ["🔥 Fire", "💨 Steam"],
+    ["🌍 Earth", "🔧 Engine"]
+  ],
+  "🐟 Fish": [
+    ["💧 Water", "💧 Water"],
+    ["🏞️ Lake", "💧 Water"],
+    ["🌊 Ocean", "💧 Water"]
+  ],
+  "⚡ Lightning": [
+    ["🔥 Fire", "💧 Water"],
+    ["💨 Steam", "💨 Wind"],
+    ["☁️ Cloud", "🔥 Fire"]
+  ],
+  "🧱 Brick": [
+    ["🔥 Fire", "💧 Water"],
+    ["🌍 Earth", "💨 Steam"],
+    ["🔥 Fire", "🧱 Mud"]
+  ],
+  "🌸 Lily": [
+    ["🌍 Earth", "💧 Water"],
+    ["💧 Water", "💧 Water"],
+    ["🏞️ Lake", "🌱 Plant"]
+  ],
+  "🏝️ Island": [
+    ["🔥 Fire", "🔥 Fire"],
+    ["💧 Water", "💧 Water"],
+    ["🏞️ Lake", "🌋 Volcano"]
+  ],
+  "🔥 Phoenix": [
+    ["🌍 Earth", "💨 Wind"],
+    ["🧹 Dust", "🔥 Fire"],
+    ["🌋 Ash", "🔥 Fire"]
+  ],
+  "🌸 Flower": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌱 Plant", "💨 Wind"],
+    ["🌼 Dandelion", "🌍 Earth"]
+  ],
+  "🧘 Incense": [
+    ["🔥 Fire", "💨 Wind"],
+    ["🌍 Earth", "💧 Water"],
+    ["🌱 Plant", "🚬 Smoke"]
+  ],
+  "❄️ Snow": [
+    ["🌍 Earth", "🌍 Earth"],
+    ["⛰️ Mountain", "💨 Wind"],
+    ["🏔️ Avalanche", "💨 Wind"]
+  ],
+  "🌪️ Dust Storm": [
+    ["💨 Wind", "💨 Wind"],
+    ["🌍 Earth", "💨 Wind"],
+    ["🧹 Dust", "🌪️ Tornado"]
+  ],
+  "🌧️ Rain": [
+    ["🔥 Fire", "💧 Water"],
+    ["💨 Steam", "💨 Wind"],
+    ["☁️ Cloud", "💧 Water"]
+  ],
+  "🌱 Seed": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌱 Plant", "💨 Wind"],
+    ["🌼 Dandelion", "💨 Wind"]
+  ],
+  "🌿 Seaweed": [
+    ["💧 Water", "💨 Wind"],
+    ["🌍 Earth", "💧 Water"],
+    ["🌱 Plant", "🌊 Wave"]
+  ],
+  "🌺 Pollen": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌍 Earth", "💨 Wind"],
+    ["🧹 Dust", "🌱 Plant"]
+  ],
+  "🌳 Forest": [
+    ["🌍 Earth", "💧 Water"],
+    ["🌍 Earth", "🌱 Plant"],
+    ["🌳 Tree", "🌍 Earth"]
+  ],
+  "🏖️ Beach": [
+    ["💧 Water", "💨 Wind"],
+    ["🌊 Wave", "🌍 Earth"],
+    ["🏖️ Sand", "💧 Water"]
+  ],
+  "🏄‍♂️ Surf": [
+    ["💧 Water", "💨 Wind"],
+    ["🔥 Fire", "💧 Water"],
+    ["💨 Steam", "🌊 Wave"]
+  ],
+  "🏜️ Desert": [
+    ["💧 Water", "💨 Wind"],
+    ["🌍 Earth", "🌊 Wave"],
+    ["🏖️ Sand", "🌍 Earth"]
+  ],
+  "🌀 Hurricane": [
+    ["💨 Wind", "💨 Wind"],
+    ["🌪️ Tornado", "💧 Water"],
+    ["🌊 Tsunami", "💨 Wind"]
+  ],
+  "🌕 Moon": [
+    ["🌍 Earth", "💨 Wind"],
+    ["🧹 Dust", "🌍 Earth"],
+    ["🪐 Planet", "🌍 Earth"]
+  ],
+  "🍵 Tea": [
+    ["🔥 Fire", "💧 Water"],
+    ["🍃 Leaf", "💧 Water"],
+    ["🌱 Plant", "💨 Steam"]
+  ],
+  "🌫️ Mist": [
+    ["🔥 Fire", "💧 Water"],
+    ["💨 Steam", "💨 Wind"],
+    ["☁️ Cloud", "💨 Wind"]
+  ],
+  "🏝️ Oasis": [
+    ["💧 Water", "💨 Wind"],
+    ["🌍 Earth", "🌊 Wave"],
+    ["🏜️ Desert", "💧 Water"]
+  ],
+  "🍃 Leaf": [
+    ["🌱 Plant", "🌞 Sun"],
+    ["🌳 Tree", "💨 Wind"],
+    ["🌾 Grass", "💧 Dew"]
+  ],
+  "🍷 Wine": [
+    ["🍇 Grape", "⏳ Time"],
+    ["🍇 Fruit", "🍞 Yeast"],
+    ["🛢️ Barrel", "🍇 Grape"]
+  ],
+  "🐉 Dragon": [
+    ["🔥 Fire", "🦎 Lizard"],
+    ["✨ Magic", "🐾 Beast"],
+    ["🌌 Sky", "🦕 Dinosaur"]
+  ],
+  "🏺 Clay": [
+    ["🏖️ Sand", "💧 Water"],
+    ["🌍 Earth", "🪨 Mineral"],
+    ["🧱 Silt", "🔨 Pressure"]
+  ],
+  "🏜️ Dune": [
+    ["🏖️ Sand", "💨 Wind"],
+    ["🏜️ Desert", "🏔️ Hill"],
+    ["🏖️ Sand", "🌊 Wave"]
+  ],
+  "🌬️ Windmill": [
+    ["💨 Wind", "🎡 Wheel"],
+    ["🏢 Building", "🌬️ Air"],
+    ["🌾 Grain", "⚙️ Mechanism"]
+  ],
+  "💧 Puddle": [
+    ["💧 Water", "🌍 Ground"],
+    ["🌧️ Rain", "🏜️ Dirt"],
+    ["💧 Liquid", "🕳️ Depression"]
+  ],
+  "🌱 Soil": [
+    ["🌍 Earth", "🍂 Decay"],
+    ["🏖️ Sand", "🌱 Organic"],
+    ["🏺 Clay", "🌱 Life"]
+  ],
+  "⛰️ Mountain Range": [
+    ["⛰️ Mountain", "⛰️ Mountain"],
+    ["🌍 Earth", "💪 Force"],
+    ["🪨 Rock", "📈 Elevation"]
+  ],
+  "🏔️ Fjord": [
+    ["💧 Water", "🏞️ Valley"],
+    ["🏔️ Glacier", "🌊 Ocean"],
+    ["⛰️ Mountain", "🌊 Sea"]
+  ],
+  "🏔️ Landslide": [
+    ["🌧️ Rain", "⛰️ Slope"],
+    ["🪨 Gravity", "🌍 Earth"],
+    ["🪨 Rock", "🏃‍♂️ Movement"]
+  ]
+}
