@@ -29,7 +29,7 @@ function layoutNodes(nodes: Node[], edges: Edge[]): Node[] {
       ...node,
       position: {
         x: col * 200,
-        y: row * 60,
+        y: row * 75,
       },
     })
   })
