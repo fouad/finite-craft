@@ -1,13 +1,24 @@
 import { NodeProps, useReactFlow } from 'reactflow'
 
 import { uuid, randomLabel } from '../utils'
+import { Dispatch, SetStateAction } from 'react'
 
 // this hook implements the logic for clicking a placeholder node
 // on placeholder node click: turn the placeholder and connecting edge into a workflow node
-export function useMergeWordClick(id: NodeProps['id']) {
+export function useMergeWordClick(
+  id: NodeProps['id'],
+  state: {
+    open: boolean
+  },
+  setState: Dispatch<
+    SetStateAction<{
+      open: boolean
+    }>
+  >
+) {
   const { getNodes, getNode, setNodes, setEdges } = useReactFlow()
 
-  const onClick = () => {
+  const onClick = async () => {
     // we need the parent node object for getting its position
     const parentNode = getNode(id)
 
@@ -35,8 +46,16 @@ export function useMergeWordClick(id: NodeProps['id']) {
       target: childPlaceholderId,
       type: 'placeholder',
     }
-
-    const result = prompt('What word you like to use?')
+    //@ts-ignore
+    window._prompt = (value: string) => {
+      return value
+    }
+    const promise: Promise<string> = new Promise((resolve) => {
+      //@ts-ignore
+      window._prompt = resolve
+    })
+    setState({ open: true })
+    const result = await promise
     let index = -1
 
     setNodes((nodes) =>
@@ -56,18 +75,31 @@ export function useMergeWordClick(id: NodeProps['id']) {
 
     setTimeout(async () => {
       const nodes = getNodes()
-      const merged = await fetch('/api/merge?' + new URLSearchParams({
-        first: nodes[index - 1].data.label,
-        second: result || '',
-      }).toString(), {
-        method: 'GET',
-      }).then(r => r.json())
-      console.log(merged)
+      const merged = await fetch(
+        '/api/merge?' +
+          new URLSearchParams({
+            first: nodes[index - 1].data.label as string,
+            second: result || '',
+          }).toString(),
+        {
+          method: 'GET',
+        }
+      ).then((r) => r.json())
 
       setNodes((nodes) =>
         nodes.map((node, idx) => {
-          // here we are changing the type of the clicked node from placeholder to workflow
-          if (idx === (index + 1)) {
+          if (idx === index + 1) {
+            if (idx === nodes.length - 1) {
+              return {
+                ...node,
+                type: 'goal',
+                data: {
+                  ...node.data,
+                  success: nodes[nodes.length - 1].data.label === merged.result,
+                },
+              }
+            }
+
             return {
               ...node,
               type: 'workflow',

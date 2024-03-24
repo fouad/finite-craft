@@ -5,10 +5,10 @@ import cx from 'classnames';
 import styles from './NodeTypes.module.css';
 import useNodeClickHandler from '../hooks/useNodeClick';
 
-const WorkflowNode = ({ id, data }: NodeProps) => {
+const GenWordNode = ({ id, data }: NodeProps) => {
   return (
     <div
-      className={cx(styles.node)}
+      className={cx(styles.node, styles.genWordNode, !data.label ? styles.empty : '')}
     >
       {data.label}
       <Handle
@@ -35,4 +35,4 @@ const WorkflowNode = ({ id, data }: NodeProps) => {
   );
 };
 
-export default memo(WorkflowNode);
+export default memo(GenWordNode);

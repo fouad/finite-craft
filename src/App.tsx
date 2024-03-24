@@ -12,6 +12,7 @@
 import ReactFlow, {
   Background,
   Edge,
+  MarkerType,
   Node,
   ProOptions,
   ReactFlowProvider,
@@ -36,40 +37,40 @@ const defaultNodes: Node[] = [
   },
   {
     id: '1-a',
-    data: { label: ' ' },
+    data: { label: '' },
     position: { x: 200, y: 0 },
     type: 'merge',
   },
   {
     id: '2',
-    data: { label: '🌮 Taco' },
+    data: { label: '' },
     position: { x: 0, y: 0 },
-    type: 'placeholder',
+    type: 'generated',
   },
   {
     id: '2-a',
-    data: { label: ' ' },
+    data: { label: '' },
     position: { x: 200, y: 0 },
     type: 'merge',
   },
 
   {
     id: '3',
-    data: { label: '🌮 Taco' },
+    data: { label: '' },
     position: { x: 0, y: 0 },
-    type: 'placeholder',
+    type: 'generated',
   },
   {
     id: '3-a',
-    data: { label: ' ' },
+    data: { label: '' },
     position: { x: 200, y: 0 },
     type: 'merge',
   },
   {
     id: '4',
-    data: { label: '+' },
+    data: { label: '🚊 Train' },
     position: { x: 0, y: 150 },
-    type: 'placeholder',
+    type: 'goal',
   },
 ];
 
@@ -80,36 +81,59 @@ const defaultEdges: Edge[] = [
     source: '1',
     sourceHandle: 'right',
     target: '1-a',
+    type: 'straight',
+    markerStart: {
+      type: MarkerType.Arrow,
+    }
   },
   {
     id: '1=>2',
     source: '1',
     target: '2',
-    type: 'placeholder',
+    type: 'straight',
+    markerEnd: {
+      type: MarkerType.Arrow,
+    },
   },
   {
     id: '2=>2-a',
     source: '2',
     sourceHandle: 'right',
     target: '2-a',
+    type: 'straight',
+
+    markerStart: {
+      type: MarkerType.Arrow,
+    }
   },
   {
     id: '2=>3',
     source: '2',
     target: '3',
-    type: 'placeholder',
+    type: 'straight',
+    markerEnd: {
+      type: MarkerType.Arrow,
+    },
   },
   {
     id: '3=>3-a',
     source: '3',
     sourceHandle: 'right',
     target: '3-a',
+    type: 'straight',
+
+    markerStart: {
+      type: MarkerType.Arrow,
+    }
   },
   {
     id: '3=>4',
     source: '3',
     target: '4',
-    type: 'placeholder',
+    type: 'straight',
+    markerEnd: {
+      type: MarkerType.Arrow,
+    },
   },
 ];
 

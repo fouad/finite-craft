@@ -9,7 +9,6 @@
   text-align: center;
   font-weight: bold;
   color: #0984e3;
-  cursor: pointer;
   line-height: 1.2;
 }
 
@@ -19,6 +18,31 @@
     rgb(252, 252, 252) 0%,
     rgb(239, 241, 243) 90%
   );
+}
+
+.node.merge {
+  cursor: pointer;
+}
+
+.node.merge:not(.hasValue) {
+  width: 160px;
+  background: #fff;
+  border: 1px dashed #bbb;
+  color: #bbb;
+  box-shadow: none;
+}
+
+
+.node.merge:hover {
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(252, 252, 252) 0%,
+    rgb(239, 241, 243) 90%
+  );
+}
+
+.node.merge.hasValue {
+  cursor: pointer;
 }
 
 .content {
@@ -35,4 +59,36 @@
   border: 1px dashed #bbb;
   color: #bbb;
   box-shadow: none;
+}
+
+.genWordNode {
+  border: 1px solid #0984e3;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  padding: 12px;
+  width: 160px;
+  height: 44px;
+  text-align: center;
+  font-weight: bold;
+  color: #0984e3;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.genWordNode.empty {
+  opacity: 0.5;
+  transform: scale(0.5);
+}
+
+.goalWord.fail,
+.goalWord.fail:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.goalWord.success,
+.goalWord.success:hover {
+  background: #2ecc71;
+  color: #fff;
 }
