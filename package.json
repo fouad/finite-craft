@@ -16,6 +16,7 @@
     "clsx": "^2.1.0",
     "d3-hierarchy": "^3.1.2",
     "d3-timer": "^3.0.1",
+    "fireworks": "^2.2.7",
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
     "node-fetch": "^3.3.2",

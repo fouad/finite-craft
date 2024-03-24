@@ -1,4 +1,7 @@
 import { NodeProps, useReactFlow } from 'reactflow'
+import fx from 'fireworks'
+
+let range = (n: Number) => [...new Array(n)]
 
 import { uuid, randomLabel } from '../utils'
 import { Dispatch, SetStateAction } from 'react'
@@ -90,12 +93,28 @@ export function useMergeWordClick(
         nodes.map((node, idx) => {
           if (idx === index + 1) {
             if (idx === nodes.length - 1) {
+              const success =
+                nodes[nodes.length - 1].data.label === merged.result
+              if (success) {
+                range(6).map(() =>
+                  fx({
+                    x:
+                      (Math.random() * window.innerWidth) / 2 +
+                      window.innerWidth / 4,
+                    y:
+                      (Math.random() * window.innerWidth) / 4 +
+                      window.innerWidth / 4,
+                    colors: ['#cc3333', '#4CAF50', '#81C784'],
+                  })
+                )
+              }
+
               return {
                 ...node,
                 type: 'goal',
                 data: {
                   ...node.data,
-                  success: nodes[nodes.length - 1].data.label === merged.result,
+                  success,
                 },
               }
             }
