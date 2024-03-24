@@ -1,216 +1,216 @@
 {
-  "Transformer": {
+  "transformer": {
     "steps": [
-      ["Water", "Fire"],
-      ["Steam", "Fire"],
-      ["Engine", "Robot"]
+      ["water", "fire"],
+      ["steam", "fire"],
+      ["engine", "robot"]
     ],
-    "ingredients": ["Water", "Fire", "Robot"]
+    "ingredients": ["water", "fire", "robot"]
   },
-  "LLM": {
+  "llm": {
     "steps": [
-      ["Computer", "Data"],
-      ["Model", "Parameters"],
-      ["Neural-Network", "Scale"]
+      ["computer", "data"],
+      ["model", "parameters"],
+      ["neural-network", "scale"]
     ],
-    "ingredients": ["Computer", "Data", "Parameters", "Scale"]
+    "ingredients": ["computer", "data", "parameters", "scale"]
   },
-  "GPU": {
+  "gpu": {
     "steps": [
-      ["Computer", "Electricity"],
-      ["Processing", "Speed"],
-      ["FPGA", "Gaming"]
+      ["computer", "electricity"],
+      ["processing", "speed"],
+      ["fpga", "gaming"]
     ],
-    "ingredients": ["Computer", "Electricity", "Gaming", "Speed"]
+    "ingredients": ["computer", "electricity", "gaming", "speed"]
   },
-  "Cryptocurrency": {
+  "cryptocurrency": {
     "steps": [
-      ["Computer", "Security"],
-      ["Cryptography", "Decentralized"],
-      ["Blockchain", "Money"]
+      ["computer", "security"],
+      ["cryptography", "decentralized"],
+      ["blockchain", "money"]
     ],
     "ingredients": [
-      "Computer",
-      "Security",
-      "Cryptography",
-      "Decentralized",
-      "Money"
+      "computer",
+      "security",
+      "cryptography",
+      "decentralized",
+      "money"
     ]
   },
-  "Sun": {
+  "sun": {
     "steps": [
-      ["Earth", "Wind"],
-      ["Dust", "Earth"],
-      ["Fire", "Planet"]
+      ["earth", "wind"],
+      ["dust", "earth"],
+      ["fire", "planet"]
     ],
-    "ingredients": ["Earth", "Wind", "Fire"]
+    "ingredients": ["earth", "wind", "fire"]
   },
-  "Rock": {
+  "rock": {
     "steps": [
-      ["Earth", "Fire"],
-      ["Lava", "Water"],
-      ["Stone", "Water"]
+      ["earth", "fire"],
+      ["lava", "water"],
+      ["stone", "water"]
     ],
-    "ingredients": ["Earth", "Fire", "Water"]
+    "ingredients": ["earth", "fire", "water"]
   },
-  "Ice": {
+  "ice": {
     "steps": [
-      ["Fire", "Wind"],
-      ["Smoke", "Water"],
-      ["Fog", "Water"]
+      ["fire", "wind"],
+      ["smoke", "water"],
+      ["fog", "water"]
     ],
-    "ingredients": ["Fire", "Wind", "Water"]
+    "ingredients": ["fire", "wind", "water"]
   },
-  "Glass": {
+  "glass": {
     "steps": [
-      ["Water", "Wind"],
-      ["Wave", "Earth"],
-      ["Sand", "Fire"]
+      ["water", "wind"],
+      ["wave", "earth"],
+      ["sand", "fire"]
     ],
-    "ingredients": ["Water", "Wind", "Fire"]
+    "ingredients": ["water", "wind", "fire"]
   },
-  "Marsh": {
+  "marsh": {
     "steps": [
-      ["Earth", "Water"],
-      ["Plant", "Water"],
-      ["Water", "Swamp"]
+      ["earth", "water"],
+      ["plant", "water"],
+      ["water", "swamp"]
     ],
-    "ingredients": ["Earth", "Water", "Plant"]
+    "ingredients": ["earth", "water", "plant"]
   },
-  "River": {
+  "river": {
     "steps": [
-      ["Earth", "Water"],
-      ["Earth", "Plant"],
-      ["Tree", "Water"]
+      ["earth", "water"],
+      ["earth", "plant"],
+      ["tree", "water"]
     ],
-    "ingredients": ["Earth", "Water", "Plant"]
+    "ingredients": ["earth", "water", "plant"]
   },
-  "Fish": {
+  "fish": {
     "steps": [
-      ["Water", "Water"],
-      ["Lake", "Water"],
-      ["Ocean", "Water"]
+      ["water", "water"],
+      ["lake", "water"],
+      ["ocean", "water"]
     ],
-    "ingredients": ["Water", "Lake", "Ocean"]
+    "ingredients": ["water", "lake", "ocean"]
   },
-  "Lightning": {
+  "lightning": {
     "steps": [
-      ["Fire", "Water"],
-      ["Steam", "Wind"],
-      ["Cloud", "Fire"]
+      ["fire", "water"],
+      ["steam", "wind"],
+      ["cloud", "fire"]
     ],
-    "ingredients": ["Fire", "Water", "Wind"]
+    "ingredients": ["fire", "water", "wind"]
   },
-  "Brick": {
+  "brick": {
     "steps": [
-      ["Fire", "Water"],
-      ["Earth", "Steam"],
-      ["Fire", "Mud"]
+      ["fire", "water"],
+      ["earth", "steam"],
+      ["fire", "mud"]
     ],
-    "ingredients": ["Fire", "Water", "Earth"]
+    "ingredients": ["fire", "water", "earth"]
   },
-  "Mist": {
+  "mist": {
     "steps": [
-      ["Fire", "Water"],
-      ["Steam", "Wind"],
-      ["Cloud", "Wind"]
+      ["fire", "water"],
+      ["steam", "wind"],
+      ["cloud", "wind"]
     ],
-    "ingredients": ["Fire", "Water", "Wind"]
+    "ingredients": ["fire", "water", "wind"]
   },
-  "Oasis": {
+  "oasis": {
     "steps": [
-      ["Water", "Wind"],
-      ["Earth", "Wave"],
-      ["Desert", "Water"]
+      ["water", "wind"],
+      ["earth", "wave"],
+      ["desert", "water"]
     ],
-    "ingredients": ["Water", "Wind", "Earth"]
+    "ingredients": ["water", "wind", "earth"]
   },
-  "Leaf": {
+  "leaf": {
     "steps": [
-      ["Plant", "Sun"],
-      ["Tree", "Wind"],
-      ["Grass", "Dew"]
+      ["plant", "sun"],
+      ["tree", "wind"],
+      ["grass", "dew"]
     ],
-    "ingredients": ["Plant", "Sun", "Wind"]
+    "ingredients": ["plant", "sun", "wind"]
   },
-  "Wine": {
+  "wine": {
     "steps": [
-      ["Grape", "Time"],
-      ["Fruit", "Yeast"],
-      ["Barrel", "Grape"]
+      ["grape", "time"],
+      ["fruit", "yeast"],
+      ["barrel", "grape"]
     ],
-    "ingredients": ["Grape", "Time", "Yeast"]
+    "ingredients": ["grape", "time", "yeast"]
   },
-  "Dragon": {
+  "dragon": {
     "steps": [
-      ["Fire", "Lizard"],
-      ["Magic", "Beast"],
-      ["Sky", "Dinosaur"]
+      ["fire", "lizard"],
+      ["magic", "beast"],
+      ["sky", "dinosaur"]
     ],
-    "ingredients": ["Fire", "Magic", "Sky"]
+    "ingredients": ["fire", "magic", "sky"]
   },
-  "Clay": {
+  "clay": {
     "steps": [
-      ["Sand", "Water"],
-      ["Earth", "Mineral"],
-      ["Silt", "Pressure"]
+      ["sand", "water"],
+      ["earth", "mineral"],
+      ["silt", "pressure"]
     ],
-    "ingredients": ["Sand", "Water", "Earth"]
+    "ingredients": ["sand", "water", "earth"]
   },
-  "Dune": {
+  "dune": {
     "steps": [
-      ["Sand", "Wind"],
-      ["Desert", "Hill"],
-      ["Sand", "Wave"]
+      ["sand", "wind"],
+      ["desert", "hill"],
+      ["sand", "wave"]
     ],
-    "ingredients": ["Sand", "Wind", "Desert"]
+    "ingredients": ["sand", "wind", "desert"]
   },
-  "Windmill": {
+  "windmill": {
     "steps": [
-      ["Wind", "Wheel"],
-      ["Building", "Air"],
-      ["Grain", "Mechanism"]
+      ["wind", "wheel"],
+      ["building", "air"],
+      ["grain", "mechanism"]
     ],
-    "ingredients": ["Wind", "Wheel", "Building"]
+    "ingredients": ["wind", "wheel", "building"]
   },
-  "Puddle": {
+  "puddle": {
     "steps": [
-      ["Water", "Ground"],
-      ["Rain", "Dirt"],
-      ["Liquid", "Depression"]
+      ["water", "ground"],
+      ["rain", "dirt"],
+      ["liquid", "depression"]
     ],
-    "ingredients": ["Water", "Ground", "Rain"]
+    "ingredients": ["water", "ground", "rain"]
   },
-  "Soil": {
+  "soil": {
     "steps": [
-      ["Earth", "Decay"],
-      ["Sand", "Organic"],
-      ["Clay", "Life"]
+      ["earth", "decay"],
+      ["sand", "organic"],
+      ["clay", "life"]
     ],
-    "ingredients": ["Earth", "Decay", "Sand"]
+    "ingredients": ["earth", "decay", "sand"]
   },
-  "Mountain Range": {
+  "mountain range": {
     "steps": [
-      ["Mountain", "Mountain"],
-      ["Earth", "Force"],
-      ["Rock", "Elevation"]
+      ["mountain", "mountain"],
+      ["earth", "force"],
+      ["rock", "elevation"]
     ],
-    "ingredients": ["Mountain", "Earth", "Rock"]
+    "ingredients": ["mountain", "earth", "rock"]
   },
-  "Fjord": {
+  "fjord": {
     "steps": [
-      ["Water", "Valley"],
-      ["Glacier", "Ocean"],
-      ["Mountain", "Sea"]
+      ["water", "valley"],
+      ["glacier", "ocean"],
+      ["mountain", "sea"]
     ],
-    "ingredients": ["Water", "Valley", "Glacier"]
+    "ingredients": ["water", "valley", "glacier"]
   },
-  "Landslide": {
+  "landslide": {
     "steps": [
-      ["Rain", "Slope"],
-      ["Gravity", "Earth"],
-      ["Rock", "Movement"]
+      ["rain", "slope"],
+      ["gravity", "earth"],
+      ["rock", "movement"]
     ],
-    "ingredients": ["Rain", "Slope", "Gravity"]
+    "ingredients": ["rain", "slope", "gravity"]
   }
 }
