@@ -155,12 +155,14 @@ export const getFullRecipesFromData = async (): Promise<{
   return getFullRecipesWithMinimumSteps(targets, recipeObj, index);
 };
 
+const _recipes = require('../recipes.json')
+
 export const getOrGenerateRecipes = async (): Promise<{
   [key: string]: { steps: string[][]; ingredients: string[] };
 }> => {
   let recipes;
   try {
-    recipes = JSON.parse(await fs.promises.readFile("recipes.json", "utf8"));
+    recipes = _recipes
   } catch (error) {
     console.log("Generating recipes data");
     recipes = await getFullRecipesFromData();
