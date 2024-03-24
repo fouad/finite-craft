@@ -1,5 +1,5 @@
-import { memo, useState } from 'react'
-import { Handle, Position, NodeProps } from 'reactflow'
+import { memo, useMemo, useState } from 'react'
+import { Handle, Position, NodeProps, useReactFlow } from 'reactflow'
 import cx from 'classnames'
 
 import styles from './NodeTypes.module.css'
@@ -20,6 +20,7 @@ import {
 const MergeWordNode = ({ id, data }: NodeProps) => {
   // see the hook implementation for details of the click handler
   // calling onClick turns this node and the connecting edge into a workflow node
+  const { getNodes } = useReactFlow()
   const nodeClasses = cx(
     styles.node,
     styles.merge,
@@ -29,6 +30,10 @@ const MergeWordNode = ({ id, data }: NodeProps) => {
   const onClick = useMergeWordClick(id, state, setState)
   // @ts-ignore
   const potentialWords = window._ingredients || ['Tree', 'Train', 'Bus', 'Taco']
+  const ns = getNodes()
+  const prevNode = useMemo(() => {
+    return ns[ns.findIndex((node) => node.id === id) - 1]
+  }, [id, ns.map((n) => n.data.label || '')])
 
   return (
     <>
@@ -60,7 +65,15 @@ const MergeWordNode = ({ id, data }: NodeProps) => {
         >
           <DrawerHeader>
             <DrawerTitle className="text-center text-2xl my-3">
-              What word you like to combine?
+              Pick a word to combine{' '}
+              {prevNode.data.label && (
+                <>
+                  with{' '}
+                  <span className="px-2 py-1 rounded-lg bg-blue-200">
+                    {prevNode.data.label}
+                  </span>
+                </>
+              )}
             </DrawerTitle>
           </DrawerHeader>
           <div className="max-w-sm mx-auto w-full mb-6">
