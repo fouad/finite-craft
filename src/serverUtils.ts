@@ -20,26 +20,14 @@ export const mergeWords = async (
       {
         role: "system",
         content: `Return a JSON {result: word} that is a SINGLE word with emoji (DO NOT simply concatenate the two words, NO HYPHENS allowed, stick to normal vocabulary) which is a CONCEPTUAL combination of the two words provided.
-        Examples:
-        Tree + Fire = Ash
-        Cloud + Water = Rain
-        Soil + Volcano = Lava
-        Umbrella + Dust = Dustbin
-        Earth + Dustbin = Landfill
-        Wind + Plant = Dandelion
-        Plant + Water = Swamp
-        Water + Fire = Steam,
-        Steam + Fire = Engine,
-        Engine + Robot = Transformer,
-        Computer + Algorithm = Data,
-        Data + Research = Brain,
-        Brain + AI = Neural-Network,
-        Computer + Electricity = Graphics,
-        Graphics + Speed = Rendering,
-        Rendering + GPU = GPU,
-        Computer + Security = Internet,
-        Internet + Cryptocurrency = Chain,
-        Chain + Ledger = Blockchain,
+        Examples (follow these exactly if possible):
+        tree + fire = ash
+        cloud + water = rain
+        soil + volcano = lava
+        plant + water = swamp
+        water + fire = steam,
+        steam + fire = engine,
+        engine + robot = transformer,
         
         Now:
         ${first} + ${second} = ?`,

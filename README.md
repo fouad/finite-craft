@@ -1,40 +1,32 @@
 # Finite Craft
+_Wikiracer + Wordle for LLMs — combine words together to reach the word of the day_
 
-## Todos:
+## Play it here! 
+http://finitecraft.com
 
-Frontend:
-- [ ] Modify UI with arrows to show the merging of words
-- [ ] Add a drawer/sheet to show the words that can be merged
-- [ ] Add loading animation while generating
-- [ ] Add goal word node as the final step of the graph underneath
-- [ ] Drag and drop from limited set of words in drawer
-- [ ] Responsive layout (zoom)
+## Inspiration
+We were inspired by 3 games of the modern age: Wikiracer, Wordle, and Minecraft. The result is Finite Craft, a game where you are given an item to craft towards, and a starting word, and you can combine the items given to get there in 3 steps or more.
 
-Backend:
-- [x] Write API endpoint for merging words
-- [x] Add a `README.md` file.
-- [x] Write script to generate candidate words of the day and primitives to start from either using our API or from the data from InfiniteCraftWiki
-  - [x] Parsing the data from the infinitecraftwiki ended up being extremely complicated
-  - [x] Handwrote the recipes for now
-- [x] Add an API endpoint to get word of the day, and word options
-- [ ] Modify API to include emoji with word
-
-Ideas:
-- [ ] Add embedding comparison between two words, to see how close you are to the goal word
-
+## How it works
+The game uses Mistral behind the scenes to enable open ended crafting of any two words. We also used this functionality to build out the sets of combinations that form recipes.
 
 ## Getting Started
+First, get yourself a Mistral API key from [here](https://www.mistral.ai/). Then, create a `.env.local` file in the root of the project and add the following:
 
-First, run the development server:
+```
+MISTRAL_API_KEY=your_api_key_here
+```
+
+Then, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the game.
