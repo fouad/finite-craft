@@ -104,7 +104,7 @@ export function useMergeWordClick(
                     y:
                       (Math.random() * window.innerWidth) / 4 +
                       window.innerWidth / 4,
-                    colors: ['#cc3333', '#4CAF50', '#81C784'],
+                    colors: ['#0984e3', '#4CAF50', '#81C784'],
                   })
                 )
               }
