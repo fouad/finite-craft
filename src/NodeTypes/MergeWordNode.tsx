@@ -50,17 +50,24 @@ const MergeWordNode = ({ id, data }: NodeProps) => {
           setState({ open: false })
         }}
       >
-        <DrawerContent className="text-center">
+        <DrawerContent
+          onClose={() => {
+            // @ts-ignore
+            window._prompt('')
+            setState({ open: false })
+          }}
+          className="text-center"
+        >
           <DrawerHeader>
-            <DrawerTitle className="text-center">
+            <DrawerTitle className="text-center text-2xl my-3">
               What word you like to combine?
             </DrawerTitle>
           </DrawerHeader>
-          <div className="max-w-sm mx-auto w-full">
-            {potentialWords.map((word:string) => {
+          <div className="max-w-sm mx-auto w-full mb-6">
+            {potentialWords.map((word: string) => {
               return (
                 <div
-                  className="bg-gray-100 hover:bg-gray-200 rounded-lg py-3 px-6 mb-3 cursor-pointer"
+                  className="bg-gray-100 hover:bg-gray-200 rounded-lg py-3 px-6 mb-3 cursor-pointer text-3xl font-bold"
                   key={word}
                   onClick={() => {
                     // @ts-ignore

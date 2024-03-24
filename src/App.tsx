@@ -83,6 +83,7 @@ const defaultEdges: Edge[] = [
     sourceHandle: 'right',
     target: '1-a',
     type: 'straight',
+    label: '+',
     markerStart: {
       type: MarkerType.Arrow,
     },
@@ -92,6 +93,7 @@ const defaultEdges: Edge[] = [
     source: '1',
     target: '2',
     type: 'straight',
+    label: '=',
     markerEnd: {
       type: MarkerType.Arrow,
     },
@@ -102,7 +104,7 @@ const defaultEdges: Edge[] = [
     sourceHandle: 'right',
     target: '2-a',
     type: 'straight',
-
+    label: '+',
     markerStart: {
       type: MarkerType.Arrow,
     },
@@ -112,6 +114,7 @@ const defaultEdges: Edge[] = [
     source: '2',
     target: '3',
     type: 'straight',
+    label: '=',
     markerEnd: {
       type: MarkerType.Arrow,
     },
@@ -122,7 +125,7 @@ const defaultEdges: Edge[] = [
     sourceHandle: 'right',
     target: '3-a',
     type: 'straight',
-
+    label: '+',
     markerStart: {
       type: MarkerType.Arrow,
     },
@@ -132,6 +135,7 @@ const defaultEdges: Edge[] = [
     source: '3',
     target: '4',
     type: 'straight',
+    label: '=',
     markerEnd: {
       type: MarkerType.Arrow,
     },
