@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getOrGenerateRecipes } from "../../serverUtils";
 
 type RecipeList = {
-  [key: string]: string[];
+  [key: string]: { steps: string[][]; ingredients: string[] };
 };
 
 export default async function handler(
