@@ -178,7 +178,13 @@ function ReactFlowWrapper() {
   const [state, setState] = useState({ nodes: [] as Node[] })
 
   useEffect(() => {
-    fetch('/api/wotd?day=2024-03-24')
+    const d = new Date()
+    const day = [
+      d.getFullYear(),
+      String(d.getMonth() + 1).padStart(2, '0'),
+      d.getDate(),
+    ].join('-')
+    fetch(`/api/wotd?day=${day}`)
       .then((r) => r.json())
       .then((wotd) => {
         const { steps, ingredients, target } = wotd
@@ -186,7 +192,7 @@ function ReactFlowWrapper() {
         window._ingredients = ingredients
         setState({ nodes: initNodes(steps[0][0] as string, target as string) })
       })
-  })
+  }, [])
 
   if (!state.nodes || state.nodes.length === 0) {
     return null
